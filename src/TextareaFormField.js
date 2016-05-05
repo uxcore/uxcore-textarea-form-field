@@ -34,7 +34,7 @@ class TextAreaFormField extends FormField {
         if (!me.props.standalone) {
             this.props.detachFormField(this);
         }
-        me.props.autosize && autosize.destory(me.refs.root);
+        me.props.autosize && autosize.destroy(me.refs.root);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -45,7 +45,7 @@ class TextAreaFormField extends FormField {
             autosize(me.refs.root);
         }
         else if (prevMode == Constants.MODE.EDIT && mode == Constants.MODE.MODE) {
-            autosize.destory(me.refs.root);
+            autosize.destroy(me.refs.root);
         }
     }
 
