@@ -6,10 +6,11 @@
  * All rights reserved.
  */
 
-let FormField = require('uxcore-form-field');
-let Constants = require("uxcore-const");
-let assign = require('object-assign');
-let autosize = require('autosize');
+const FormField = require('uxcore-form-field');
+const Constants = require("uxcore-const");
+const assign = require('object-assign');
+const autosize = require('autosize');
+const React = require('react');
 
 class TextAreaFormField extends FormField {
 
