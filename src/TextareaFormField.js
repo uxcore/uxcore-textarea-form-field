@@ -42,12 +42,17 @@ class TextAreaFormField extends FormField {
         let me = this;
         let mode = me.props.jsxmode || me.props.mode;
         let prevMode = prevProps.jsxmode || prevProps.mode;
-        if (prevMode == Constants.MODE.VIEW && mode == Constants.MODE.EDIT) {
-            autosize(me.refs.root);
+        if (me.props.autosize) {
+            if (prevProps.value !== me.props.value) {
+                autosize.update(me.refs.root);
+            }
+            if (prevMode == Constants.MODE.VIEW && mode == Constants.MODE.EDIT) {
+                autosize(me.refs.root);
+            } else if (prevMode == Constants.MODE.EDIT && mode == Constants.MODE.MODE) {
+                autosize.destroy(me.refs.root);
+            }
         }
-        else if (prevMode == Constants.MODE.EDIT && mode == Constants.MODE.MODE) {
-            autosize.destroy(me.refs.root);
-        }
+        
     }
 
     handleChange(e) {
