@@ -114,7 +114,9 @@ class TextAreaFormField extends FormField {
                      onKeyDown={me.handleKeyDown.bind(me)}/>
         }
         else if (mode == Constants.MODE.VIEW) {
-            return <span>{me.state.value}</span>
+            return <span style={{
+                'white-space': 'pre-wrap',
+            }} className="view-mode">{me.state.value}</span>
         }
     }
 }

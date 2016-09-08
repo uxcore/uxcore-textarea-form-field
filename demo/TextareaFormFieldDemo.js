@@ -42,6 +42,7 @@ class Demo extends React.Component {
     }
 
     handleChange(value, name, pass) {
+        console.log(value[name]);
         this.setState({
             value: value[name],
         })
