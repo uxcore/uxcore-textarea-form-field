@@ -1,5 +1,9 @@
 # history
 
+## 0.1.6
+
+`CHANGED` add SubComp `TextAreaCount`
+
 ## 0.1.5
 
 `CHANGED` support pre-wrap in view mode 
