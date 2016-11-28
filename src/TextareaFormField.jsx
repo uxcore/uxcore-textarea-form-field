@@ -136,9 +136,6 @@ class TextAreaFormField extends FormField {
     if (mode === Constants.MODE.EDIT) {
       return (
         <div
-          style={{
-            positon: 'relative',
-          }}
           className={classnames({
             'has-count': !!count,
           })}
