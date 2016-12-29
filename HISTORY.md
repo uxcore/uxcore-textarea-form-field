@@ -1,5 +1,9 @@
 # history
 
+## 0.1.7
+
+`CHANGED` add special className for Mount
+
 ## 0.1.6
 
 `CHANGED` add SubComp `TextAreaCount`
