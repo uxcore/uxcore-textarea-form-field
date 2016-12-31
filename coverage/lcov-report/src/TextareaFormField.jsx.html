@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">95.83% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>112/120</span>
+        <span class='fraction'>115/120</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">74.65% </span>
+        <span class="strong">77.46% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>53/71</span>
+        <span class='fraction'>55/71</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>25/25</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.96% </span>
+        <span class="strong">98.99% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>95/99</span>
+        <span class='fraction'>98/99</span>
       </div>
     </div>
   </div>
@@ -366,21 +366,21 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">15×</span>
 <span class="cline-any cline-yes">15×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
 <span class="cline-any cline-yes">14×</span>
-<span class="cline-any cline-yes">13×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -396,17 +396,17 @@
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">17×</span>
-<span class="cline-any cline-yes">17×</span>
-<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">19×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -472,7 +472,7 @@
 <span class="cline-any cline-yes">18×</span>
 <span class="cline-any cline-yes">18×</span>
 <span class="cline-any cline-yes">18×</span>
-<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">16×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -493,7 +493,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -610,7 +610,7 @@ var TextAreaFormField = function (_FormField) {
     var me = this;
     if (!me.props.standalone) {
       me.props.attachFormField(me);
-<span class="cstat-no" title="statement not covered" >      me.props.handleDataChange(me, {</span>
+      me.props.handleDataChange(me, {
         value: me.props.value,
         pass: true
       }, true);
@@ -622,8 +622,8 @@ var TextAreaFormField = function (_FormField) {
 &nbsp;
   TextAreaFormField.prototype.componentWillUnmount = function componentWillUnmount() {
     var me = this;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!me.props.standalone) {
-<span class="cstat-no" title="statement not covered" >      this.props.detachFormField(this);</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!me.props.standalone) {
+      this.props.detachFormField(this);
     }
     <span class="missing-if-branch" title="else path not taken" >E</span>if (me.props.autosize) {
       autosize.destroy(me.root);
@@ -638,8 +638,8 @@ var TextAreaFormField = function (_FormField) {
       if (prevProps.value !== me.props.value) {
         autosize.update(me.root);
       }
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (prevMode === Constants.MODE.VIEW &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >mode === Constants.MODE.EDIT)</span> {
-<span class="cstat-no" title="statement not covered" >        autosize(me.root);</span>
+      if (prevMode === Constants.MODE.VIEW &amp;&amp; mode === Constants.MODE.EDIT) {
+        autosize(me.root);
       } else <span class="missing-if-branch" title="if path not taken" >I</span>if (prevMode === Constants.MODE.EDIT &amp;&amp; mode === Constants.MODE.MODE) {
 <span class="cstat-no" title="statement not covered" >        autosize.destroy(me.root);</span>
       }
@@ -778,7 +778,7 @@ module.exports = TextAreaFormField;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 31 2016 20:00:24 GMT+0800 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 31 2016 20:41:48 GMT+0800 (CST)
 </div>
 </div>
 <script src="../prettify.js"></script>

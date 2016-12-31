@@ -23,6 +23,7 @@ describe('TextareaFormField', () => {
     expect(instance.find('.kuma-textarea').node.value).to.be('test');
   });
 
+  //jsxmode 无默认值
   it('default jsxmode', () => {
     instance = mount(
       <TextareaFormField standalone />,
@@ -39,8 +40,10 @@ describe('TextareaFormField', () => {
   });
 
   it('set standalone false', () => {
+    const spy = sinon.spy();
+
     instance = mount(
-      <TextareaFormField standalone={false} />,
+      <TextareaFormField attachFormField={spy} handleDataChange={spy} standalone={false} />,
     );
     expect(instance.props().standalone).to.equal(false);
   });
@@ -61,19 +64,21 @@ describe('TextareaFormField', () => {
   });
 
   it('componentWillUnmount', () => {
+    const spy = sinon.spy();
     sinon.spy(TextareaFormField.prototype, 'componentWillUnmount');
-    instance = mount(<TextareaFormField standalone />);
+    instance = mount(
+      <TextareaFormField detachFormField={spy} attachFormField={spy} handleDataChange={spy} standalone={false} />,
+    );
     instance.unmount();
     expect(TextareaFormField.prototype.componentWillUnmount.calledOnce).to.equal(true);
   });
 
   it('componentDidUpdate model:view to edit', () => {
     sinon.spy(TextareaFormField.prototype, 'componentDidUpdate');
-    instance = mount(<TextareaFormField autosize={false} standalone />);
-    instance.setProps({ autosize: true, value: 'test' });
+    instance = mount(<TextareaFormField mode="view" autosize={false} standalone />);
+    instance.setProps({ autosize: true, mode: 'edit', value: 'test' });
     expect(TextareaFormField.prototype.componentDidUpdate.callCount).to.equal(1);
   });
-
 
   it('attachFormField props is a function', () => {
     instance = mount(<TextareaFormField standalone />);
