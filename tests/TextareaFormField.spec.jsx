@@ -1,6 +1,6 @@
 import expect from 'expect.js';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import sinon from 'sinon';
 import TextareaFormField from '../src';
 
@@ -116,13 +116,6 @@ describe('TextareaFormField', () => {
 
   it('jsxmode view', () => {
     instance = mount(<TextareaFormField standalone jsxmode="view" value="test" />);
-    // expect(instance.find('.kuma-uxform-field-content .view-mode').text()).to.be('test');
-  });
-
-
-  it('saveRef', () => {
-    sinon.spy(TextareaFormField.prototype, 'saveRef');
-    instance = mount(<TextareaFormField standalone />);
-    // expect(TextareaFormField.prototype.saveRef.calledOnce).to.equal(true);
+    expect(instance.find('.kuma-uxform-field-content span .view-mode').text()).to.be('test');
   });
 });
