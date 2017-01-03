@@ -73,7 +73,7 @@ class TextAreaFormField extends FormField {
       }
       if (prevMode === Constants.MODE.VIEW && mode === Constants.MODE.EDIT) {
         autosize(me.root);
-      } else if (prevMode === Constants.MODE.EDIT && mode === Constants.MODE.MODE) {
+      } else if (prevMode === Constants.MODE.EDIT && mode === Constants.MODE.VIEW) {
         autosize.destroy(me.root);
       }
     }
