@@ -1,5 +1,9 @@
 # history
 
+## 0.1.9
+
+`FIXED` typo in componentDidUpdate
+
 ## 0.1.7
 
 `CHANGED` add special className for Mount
