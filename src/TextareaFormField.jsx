@@ -12,6 +12,7 @@ const assign = require('object-assign');
 const autosize = require('autosize');
 const React = require('react');
 const classnames = require('classnames');
+const { getIEVer } = require('uxcore-utils');
 
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
@@ -147,6 +148,8 @@ class TextAreaFormField extends FormField {
     const me = this;
     const mode = me.props.jsxmode || me.props.mode;
     const count = me.getCount();
+    const IEver = getIEVer();
+    const placeholder = (IEver >= 10 && me.props.IECompatible) ? '' : me.props.jsxplaceholder;
     if (mode === Constants.MODE.EDIT) {
       return (
         <div
@@ -156,7 +159,7 @@ class TextAreaFormField extends FormField {
         >
           <textarea
             disabled={me.props.jsxdisabled}
-            placeholder={me.props.jsxplaceholder}
+            placeholder={placeholder}
             className="kuma-textarea"
             ref={me.saveRef('root')}
             value={me.state.value || ''}
@@ -191,6 +194,7 @@ TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
   validateOnBlur: React.PropTypes.bool,
   autoTrim: React.PropTypes.bool,
   autosize: React.PropTypes.bool,
+  IECompatible: React.PropTypes.bool,
 });
 
 TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
@@ -199,6 +203,7 @@ TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
   onKeyDown: () => { },
   validateOnBlur: false,
   autosize: true,
+  IECompatible: true,
 });
 
 module.exports = TextAreaFormField;

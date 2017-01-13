@@ -1,5 +1,9 @@
 # history
 
+## 0.1.10
+
+`CHANGED` add prop IECompatible to enable/disable IE placeholder compatible mode.
+
 ## 0.1.9
 
 `FIXED` typo in componentDidUpdate
