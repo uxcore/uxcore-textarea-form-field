@@ -70,12 +70,12 @@ class TextAreaFormField extends FormField {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const me = this;
     const mode = me.props.jsxmode || me.props.mode;
     const prevMode = prevProps.jsxmode || prevProps.mode;
     if (me.props.autosize) {
-      if (prevProps.value !== me.props.value) {
+      if (prevProps.value !== me.props.value || prevState.value !== me.state.value) {
         autosize.update(me.root);
       }
       if (prevMode === Constants.MODE.VIEW && mode === Constants.MODE.EDIT) {
