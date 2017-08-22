@@ -1,6 +1,6 @@
 {
  "name": "uxcore-textarea-form-field",
- "version": "0.1.12",
+ "version": "0.1.13",
  "description": "uxcore-textarea-form-field component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-textarea-form-field.git",
  "author": "eternalsky",
@@ -50,7 +50,7 @@
   "classnames": "^2.1.2",
   "object-assign": "^4.0.0",
   "uxcore-const": "0.0.2",
-  "uxcore-form-field": "~0.1.2",
+  "uxcore-form-field": "^0.2.0",
   "uxcore-utils": "^0.1.1"
  },
  "contributors": [],

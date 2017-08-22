@@ -1,5 +1,9 @@
 # history
 
+## 0.1.13
+
+`CHANGED` update `FormField` to `^0.2.0`
+
 ## 0.1.10
 
 `CHANGED` add prop IECompatible to enable/disable IE placeholder compatible mode.
