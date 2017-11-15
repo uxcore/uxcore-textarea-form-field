@@ -6,13 +6,14 @@
  * All rights reserved.
  */
 
-const FormField = require('uxcore-form-field');
-const Constants = require('uxcore-const');
-const assign = require('object-assign');
-const autosize = require('autosize');
-const React = require('react');
-const classnames = require('classnames');
-const { getIEVer } = require('uxcore-utils');
+import FormField from 'uxcore-form-field';
+import Constants from 'uxcore-const';
+import assign from 'object-assign';
+import autosize from 'autosize';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import { getIEVer } from 'uxcore-utils';
 
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
@@ -35,9 +36,9 @@ const FormCount = props => (
 
 FormCount.displayName = 'FormCount';
 FormCount.propTypes = {
-  prefixCls: React.PropTypes.string,
-  length: React.PropTypes.number,
-  total: React.PropTypes.number,
+  prefixCls: PropTypes.string,
+  length: PropTypes.number,
+  total: PropTypes.number,
 };
 
 FormCount.defaultProps = {
@@ -45,7 +46,6 @@ FormCount.defaultProps = {
 };
 
 class TextAreaFormField extends FormField {
-
   componentDidMount() {
     const me = this;
     if (!me.props.standalone) {
@@ -187,20 +187,19 @@ class TextAreaFormField extends FormField {
       >{me.state.value}</span>
     );
   }
-
 }
 
 TextAreaFormField.displayName = 'TextAreaFormField';
 TextAreaFormField.TextAreaCount = FormCount;
 
 TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
-  onBlur: React.PropTypes.func,
-  onFocus: React.PropTypes.func,
-  onKeyDown: React.PropTypes.func,
-  validateOnBlur: React.PropTypes.bool,
-  autoTrim: React.PropTypes.bool,
-  autosize: React.PropTypes.bool,
-  IECompatible: React.PropTypes.bool,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  validateOnBlur: PropTypes.bool,
+  autoTrim: PropTypes.bool,
+  autosize: PropTypes.bool,
+  IECompatible: PropTypes.bool,
 });
 
 TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
@@ -212,4 +211,4 @@ TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
   IECompatible: true,
 });
 
-module.exports = TextAreaFormField;
+export default TextAreaFormField;

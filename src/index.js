@@ -6,4 +6,4 @@
  * All rights reserved.
  */
 
-module.exports = require('./TextareaFormField');
+export default from './TextareaFormField';

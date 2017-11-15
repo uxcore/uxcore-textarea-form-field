@@ -1,5 +1,9 @@
 # history
 
+## 0.1.14
+
+`CHANGED` fit React@15
+
 ## 0.1.13
 
 `CHANGED` update `FormField` to `^0.2.0`

@@ -1,11 +1,14 @@
 import expect from 'expect.js';
 import React from 'react';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import Constants from 'uxcore-const';
+import Adapter from 'enzyme-adapter-react-15';
 import sinon from 'sinon';
 import TextareaFormField from '../src';
 
 const Count = TextareaFormField.TextAreaCount;
+
+Enzyme.configure({ adapter: new Adapter() });
 
 sinon.spy(TextareaFormField.prototype, 'handleFocus');
 sinon.spy(TextareaFormField.prototype, 'handleBlur');
@@ -16,9 +19,9 @@ describe('TextareaFormField', () => {
 
   it('autoTrim', () => {
     instance = mount(<TextareaFormField autoTrim standalone />);
-    instance.find('.kuma-textarea').node.value = 'test ';
+    instance.find('.kuma-textarea').instance().value = 'test ';
     instance.find('.kuma-textarea').simulate('change');
-    expect(instance.find('.kuma-textarea').node.value).to.be('test');
+    expect(instance.find('.kuma-textarea').instance().value).to.be('test');
   });
 
   // jsxmode 无默认值

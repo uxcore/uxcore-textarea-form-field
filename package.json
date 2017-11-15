@@ -1,6 +1,6 @@
 {
  "name": "uxcore-textarea-form-field",
- "version": "0.1.13",
+ "version": "0.1.14",
  "description": "uxcore-textarea-form-field component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-textarea-form-field.git",
  "author": "eternalsky",
@@ -18,7 +18,8 @@
   "chrome": "uxcore-tools run chrome",
   "browsers": "uxcore-tools run browsers",
   "saucelabs": "uxcore-tools run saucelabs",
-  "update": "uxcore-tools run update"
+  "update": "uxcore-tools run update",
+  "tnpm-update": "uxcore-tools run tnpm-update"
  },
  "bugs": {
   "url": "http://github.com/uxcore/uxcore-textarea-form-field/issues"
@@ -32,15 +33,16 @@
  ],
  "devDependencies": {
   "console-polyfill": "^0.2.2",
-  "enzyme": "^2.7.0",
+  "enzyme": "^3.0.0",
+  "enzyme-adapter-react-15": "^1.0.0",
   "es5-shim": "^4.5.8",
   "expect.js": "~0.3.1",
   "kuma-base": "1.x",
-  "react": "0.14.x",
-  "react-addons-test-utils": "0.14.x",
-  "react-dom": "0.14.x",
+  "react": "15.x",
+  "react-dom": "15.x",
+  "react-test-renderer": "15.x",
   "uxcore-button": "~0.4.4",
-  "uxcore-form": "^1.8.13",
+  "uxcore-form": "latest",
   "uxcore-kuma": "*",
   "uxcore-tools": "0.2.x",
   "uxcore-validator": "~0.1.4"
@@ -49,6 +51,7 @@
   "autosize": "~3.0.15",
   "classnames": "^2.1.2",
   "object-assign": "^4.0.0",
+  "prop-types": "15.x",
   "uxcore-const": "0.0.2",
   "uxcore-form-field": "^0.2.0",
   "uxcore-utils": "^0.1.1"
