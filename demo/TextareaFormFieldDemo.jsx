@@ -43,6 +43,7 @@ class Demo extends React.Component {
     me.setState({
       mode: me.state.mode === Const.MODE.EDIT ? Const.MODE.VIEW : Const.MODE.EDIT,
     });
+    alert(JSON.stringify(this.form.getValues()));
   }
 
   handleChange(value, name) {
@@ -58,6 +59,7 @@ class Demo extends React.Component {
       <div>
         <Form
           className="demo"
+          ref={(c) => { this.form = c; }}
           jsxmode={me.state.mode}
           jsxvalues={{
             textArea: me.state.value,

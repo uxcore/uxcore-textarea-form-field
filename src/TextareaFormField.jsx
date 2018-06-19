@@ -47,16 +47,9 @@ FormCount.defaultProps = {
 
 class TextAreaFormField extends FormField {
   componentDidMount() {
-    const me = this;
-    if (!me.props.standalone) {
-      me.props.attachFormField(me);
-      me.props.handleDataChange(me, {
-        value: me.props.value,
-        pass: true,
-      }, true);
-    }
-    if (me.props.autosize) {
-      autosize(me.root);
+    super.componentDidMount();
+    if (this.props.autosize) {
+      autosize(this.root);
     }
   }
 
@@ -71,6 +64,7 @@ class TextAreaFormField extends FormField {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    super.componentDidUpdate(prevProps, prevState);
     const me = this;
     const mode = me.props.jsxmode || me.props.mode;
     const prevMode = prevProps.jsxmode || prevProps.mode;
