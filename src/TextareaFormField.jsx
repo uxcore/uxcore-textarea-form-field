@@ -133,16 +133,28 @@ class TextAreaFormField extends FormField {
       }
     });
     if (element) {
-      const Count = React.cloneElement(element, {
-        length: me.state.value ? me.state.value.length : 0,
+      const mixed = element.props.mixed;
+      const value = me.state.value;
+      const len = value ? TextAreaFormField.getStringLen(value, mixed) : 0;
+      return React.cloneElement(element, {
+        length: len,
         key: 'count',
       });
-
-      return Count;
     }
     return null;
   }
 
+  static getStringLen(string, mixed) {
+    let len = string.length;
+    if (!mixed) {
+      return len;
+    }
+    let reLen = 0;
+    for (let i = 0; i < len; i++) {
+      reLen += (string.charCodeAt(i) <= 128 ? 1 : 2)
+    }
+    return Math.ceil(reLen / 2);
+  }
 
   renderField() {
     const me = this;
@@ -176,6 +188,7 @@ class TextAreaFormField extends FormField {
       <span
         style={{
           whiteSpace: 'pre-wrap',
+          overflowWrap: 'break-word',
         }}
         className="view-mode"
       >{me.state.value}</span>
