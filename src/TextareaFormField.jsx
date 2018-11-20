@@ -194,6 +194,7 @@ class TextAreaFormField extends FormField {
       <span
         style={{
           whiteSpace: 'pre-wrap',
+          overflowWrap: 'break-word',
         }}
         className="view-mode"
       >{me.state.value}</span>
