@@ -1,5 +1,11 @@
 # history
 
+## 0.2.1
+
+`CHANGED` fit React@16
+`CHANGED` add prop mixed to TextAreaCount
+
+
 ## 0.1.14
 
 `CHANGED` fit React@15
