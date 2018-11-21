@@ -162,6 +162,10 @@ class TextAreaFormField extends FormField {
     const count = me.getCount();
     const IEver = getIEVer();
     const placeholder = (IEver >= 10 && me.props.IECompatible) ? '' : me.props.jsxplaceholder;
+    const maxHeight = me.props.maxHeight;
+    const style = maxHeight ? {
+      maxHeight,
+    } : null;
     if (mode === Constants.MODE.EDIT) {
       return (
         <div
@@ -173,6 +177,7 @@ class TextAreaFormField extends FormField {
             disabled={me.props.jsxdisabled}
             placeholder={placeholder}
             className="kuma-textarea"
+            style={style}
             ref={me.saveRef('root')}
             value={me.state.value || ''}
             onChange={me.handleChange.bind(me)}
@@ -207,6 +212,7 @@ TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
   autoTrim: PropTypes.bool,
   autosize: PropTypes.bool,
   IECompatible: PropTypes.bool,
+  maxHeight: PropTypes.string,
 });
 
 TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
@@ -216,6 +222,7 @@ TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
   validateOnBlur: false,
   autosize: true,
   IECompatible: true,
+  maxHeight: '',
 });
 
 export default TextAreaFormField;

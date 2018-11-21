@@ -120,6 +120,6 @@ describe('TextareaFormField', () => {
 
   it('jsxmode view', () => {
     instance = mount(<TextareaFormField standalone jsxmode={Constants.MODE.VIEW} value="test" />);
-    expect(instance.find('.kuma-uxform-field-content span .view-mode').text()).to.be('test');
+    expect(instance.find('.kuma-uxform-field-content span.view-mode').text()).to.be('test');
   });
 });
