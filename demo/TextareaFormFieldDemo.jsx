@@ -79,6 +79,9 @@ class Demo extends React.Component {
             onBlur={me.handleTextAreaBlur.bind(me)}
           >
             <TextAreaCount total={200} />
+
+            {/*<p>混合字符统计，英文字符占位0.5格</p>*/}
+            {/*<TextAreaCount total={200} mixed={true} />*/}
           </TextAreaFormField>
         </Form>
         <Button onClick={me.handleModeChange.bind(me)}>转变模式</Button>
