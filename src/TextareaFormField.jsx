@@ -15,6 +15,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { getIEVer } from 'uxcore-utils';
 
+import './TextareaFormField.less';
+
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
 const FormCount = props => (
