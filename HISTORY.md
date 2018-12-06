@@ -1,6 +1,9 @@
 # history
 
 ## 0.2.1
+`NEW` add prop autoComplete
+
+## 0.2.1
 
 `CHANGED` fit React@16
 `CHANGED` add prop mixed to TextAreaCount
