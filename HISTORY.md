@@ -1,6 +1,6 @@
 # history
 
-## 0.2.3
+## 0.2.2
 `NEW` add prop autoComplete
 
 ## 0.2.1
