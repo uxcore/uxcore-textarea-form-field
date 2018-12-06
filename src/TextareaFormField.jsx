@@ -184,6 +184,7 @@ class TextAreaFormField extends FormField {
             onFocus={me.handleFocus.bind(me)}
             onBlur={me.handleBlur.bind(me)}
             onKeyDown={me.handleKeyDown.bind(me)}
+            autoComplete={me.props.autoComplete ? 'on' : 'off'}
           />
           {count}
         </div>
@@ -212,6 +213,7 @@ TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
   autoTrim: PropTypes.bool,
   autosize: PropTypes.bool,
   IECompatible: PropTypes.bool,
+  autoComplete: PropTypes.bool,
   maxHeight: PropTypes.string,
 });
 
@@ -222,6 +224,7 @@ TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
   validateOnBlur: false,
   autosize: true,
   IECompatible: true,
+  autoComplete: true,
   maxHeight: '',
 });
 

@@ -122,4 +122,8 @@ describe('TextareaFormField', () => {
     instance = mount(<TextareaFormField standalone jsxmode={Constants.MODE.VIEW} value="test" />);
     expect(instance.find('.kuma-uxform-field-content span.view-mode').text()).to.be('test');
   });
+  it('autoComplete', () => {
+    instance = mount(<TextareaFormField standalone autoComplete={false} />);
+    expect(instance.find('.kuma-textarea').instance().autocomplete).to.be('off');
+  });
 });

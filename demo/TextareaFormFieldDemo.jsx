@@ -77,6 +77,7 @@ class Demo extends React.Component {
             jsxplaceholder="测试"
             validateOnBlur={false}
             onBlur={me.handleTextAreaBlur.bind(me)}
+            autoComplete={false}
           >
             <TextAreaCount total={200} />
 
