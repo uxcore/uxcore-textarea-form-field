@@ -1,4 +1,6 @@
 # history
+## 0.2.3
+`NEW` add new prop maxLength
 
 ## 0.2.2
 `NEW` add prop autoComplete
@@ -35,7 +37,7 @@
 
 ## 0.1.5
 
-`CHANGED` support pre-wrap in view mode 
+`CHANGED` support pre-wrap in view mode
 
 ## 0.1.4
 
@@ -47,4 +49,4 @@
 
 ## 0.1.2
 
-`FIX` fix typo 
+`FIX` fix typo

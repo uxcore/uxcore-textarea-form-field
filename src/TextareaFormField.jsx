@@ -166,6 +166,10 @@ class TextAreaFormField extends FormField {
     const style = maxHeight ? {
       maxHeight,
     } : null;
+    let rest = {}
+    if (me.props.maxLength) {
+      rest.maxLength = me.props.maxLength
+    }
     if (mode === Constants.MODE.EDIT) {
       return (
         <div
@@ -174,6 +178,7 @@ class TextAreaFormField extends FormField {
           })}
         >
           <textarea
+            {...rest}
             disabled={me.props.jsxdisabled}
             placeholder={placeholder}
             className="kuma-textarea"
@@ -215,6 +220,7 @@ TextAreaFormField.propTypes = assign({}, FormField.propTypes, {
   IECompatible: PropTypes.bool,
   autoComplete: PropTypes.bool,
   maxHeight: PropTypes.string,
+  maxLength: PropTypes.number
 });
 
 TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
@@ -225,7 +231,7 @@ TextAreaFormField.defaultProps = assign({}, FormField.defaultProps, {
   autosize: true,
   IECompatible: true,
   autoComplete: true,
-  maxHeight: '',
+  maxHeight: ''
 });
 
 export default TextAreaFormField;
