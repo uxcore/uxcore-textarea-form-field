@@ -202,7 +202,7 @@ class TextAreaFormField extends FormField {
           overflowWrap: 'break-word',
         }}
         className="view-mode"
-      >{me.state.value}</span>
+      >{me.state.value || '--'}</span>
     );
   }
 }
